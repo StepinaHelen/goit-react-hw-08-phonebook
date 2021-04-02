@@ -1,5 +1,5 @@
 .demo {
-    position: relative;
+    /* position: relative; */
     height: 700px;
     z-index: -10;
 }

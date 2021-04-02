@@ -41,11 +41,12 @@ const registration = userData => async dispatch => {
 };
 const login = userData => async dispatch => {
   dispatch(loginRequest());
-  const response = await axios.post('users/login', userData);
-  dispatch(loginSuccess(response.data));
-  console.log(response.data);
-  token.set(response.data.token)
+  
   try {
+    const response = await axios.post('users/login', userData);
+    token.set(response.data.token)
+    dispatch(loginSuccess(response.data));
+  console.log(response.data);
   } catch (error) {
     dispatch(loginError(error.message));
   }

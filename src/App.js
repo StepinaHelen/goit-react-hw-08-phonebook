@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense,lazy} from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Container from './Components/Container';
@@ -15,6 +15,8 @@ import Spinner from './Components/Spinner';
 import routes from './routes';
 import { Particle } from 'jparticles'
 import styles from './App.module.css'
+import PrivateRoute from './Components/PrivateRoute'
+import PublicRoute from './Components/PublicRoute'
 
 
 class App extends React.Component{
@@ -33,9 +35,9 @@ class App extends React.Component{
       <ToastContainer />
       <AppBar />
       <Route exact path={routes.home} component={HomePage} />
-      <Route exact path={routes.contacts} component={ContactsPage} />
-      <Route exact path={routes.login} component={LoginPage} />
-          <Route exact path={routes.registration} component={RegistrationPage} />
+          <PrivateRoute exact path={routes.contacts} component={ContactsPage} redirectTo='/login/'/>
+      <PublicRoute exact path={routes.login} component={LoginPage} restricted  redirectTo='/contacts/'/>
+          <PublicRoute exact path={routes.registration} component={RegistrationPage} restricted  redirectTo='/contacts/'/>
           </Container>
          </div>
       //  {/* </Container> */}
