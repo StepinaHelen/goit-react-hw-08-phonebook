@@ -1,6 +1,4 @@
 .demo {
-    /* position: relative; */
-    height: 700px;
-    z-index: -10;
-     /* position: relative; */
+  height: 700px;
+  z-index: -10;
 }

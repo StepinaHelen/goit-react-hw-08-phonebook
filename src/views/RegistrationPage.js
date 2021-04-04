@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import operation from '../redux/Auth/auth-operation';
 import styles from './common.module.scss';
-import { TextField ,Button } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 
 class RegistrationPage extends Component {
   state = {
@@ -11,14 +11,8 @@ class RegistrationPage extends Component {
     password: '',
   };
   handleChange = e => {
-    // console.log(e.target.name);
-    // console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   };
-  // handleChange = ({ target: { name, value } }) => {
-  //   console.log(name);
-  //   this.setState({ [name]: value });
-  // };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -35,36 +29,54 @@ class RegistrationPage extends Component {
       <div className={styles.LoginRegistrationPage}>
         <h2>Please register</h2>
 
-        <form
-          onSubmit={this.handleSubmit}
-        >
-        
-          <div  className={styles.margin}>
-  <TextField id="outlined-basic" label="Name" variant="outlined" className={styles.textField} size="small"  type="text"
+        <form onSubmit={this.handleSubmit}>
+          <div className={styles.margin}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              className={styles.textField}
+              size="small"
+              type="text"
               name="name"
               value={name}
-            onChange={this.handleChange} />
-        </div>
-       <div  className={styles.margin}>
-          <TextField id="outlined-basic" label="E-mail" variant="outlined" className={styles.textField} size="small"  type="email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className={styles.margin}>
+            <TextField
+              label="E-mail"
+              variant="outlined"
+              className={styles.textField}
+              size="small"
+              type="email"
               name="email"
               value={email}
-            onChange={this.handleChange} />
+              onChange={this.handleChange}
+            />
           </div>
-          <div  className={styles.margin}>
-          <TextField id="outlined-basic" label="Password" variant="outlined" className={styles.textField} size="small" type="password"
+          <div className={styles.margin}>
+            <TextField
+              label="Password"
+              variant="outlined"
+              className={styles.textField}
+              size="small"
+              type="password"
               name="password"
               value={password}
-              onChange={this.handleChange} />
+              onChange={this.handleChange}
+            />
           </div>
 
-
-          
           <div>
-<Button variant="outlined" color="primary" className={styles.button} type="submit">
-  Sign In
+            <Button
+              variant="outlined"
+              color="primary"
+              className={styles.button}
+              type="submit"
+            >
+              Sign In
             </Button>
-            </div>
+          </div>
         </form>
       </div>
     );
