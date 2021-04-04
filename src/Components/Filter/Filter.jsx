@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Filter.module.css';
+import styles from './Filter.module.scss';
 
 const Filter = ({ filter, onHandleInputSearch }) => {
   return (
     <div className={styles.findContact}>
-      <h2>Contacts</h2>
+      <h2 className={styles.title}>Find your contacts by name</h2>
       <label className={styles.findContactLabel}>
-        Find contacts by name
+        
         <input
           className={styles.findContactInput}
           name="filter"
           type="text"
           value={filter}
           onChange={onHandleInputSearch}
+          placeholder='Enter the name'
         />
       </label>
     </div>

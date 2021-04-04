@@ -33,7 +33,15 @@ const RegistrationPage = lazy(() =>
 class App extends React.Component{
   componentDidMount() {
     this.props.onGetCurrentUser();
-     new Particle('#demo')
+     new Particle('#demo',{
+    proximity: 90,
+       range: 130,
+       maxSpeed: 0.6,
+       lineShape: "spider",
+       parallax: true,
+ 
+ 
+})
   }
   render() {
     return (

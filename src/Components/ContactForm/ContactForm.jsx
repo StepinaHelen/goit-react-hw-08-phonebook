@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './ContactForm.module.css';
+import styles from './ContactForm.module.scss';
 import Button from '../Button';
 import { toast } from 'react-toastify';
 
@@ -44,8 +44,8 @@ class ContactForm extends React.Component {
   render() {
     const { name, number } = this.state;
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <div className={styles.container}>
+        <h2>Add new contacts</h2>
         <form onSubmit={this.handleSubmit} className={styles.form}>
           <label className={styles.label}>
             Name

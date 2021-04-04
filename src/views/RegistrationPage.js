@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import operation from '../redux/Auth/auth-operation';
+import styles from './common.module.scss';
+import { TextField ,Button } from '@material-ui/core';
 
 class RegistrationPage extends Component {
   state = {
@@ -30,44 +32,39 @@ class RegistrationPage extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div>
-        <h1>Страница регистрации</h1>
+      <div className={styles.LoginRegistrationPage}>
+        <h2>Please register</h2>
 
         <form
           onSubmit={this.handleSubmit}
-          // autoComplete="off"
         >
-          <label>
-            Имя
-            <input
-              type="text"
+        
+          <div  className={styles.margin}>
+  <TextField id="outlined-basic" label="Name" variant="outlined" className={styles.textField} size="small"  type="text"
               name="name"
               value={name}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label>
-            Почта
-            <input
-              type="email"
+            onChange={this.handleChange} />
+        </div>
+       <div  className={styles.margin}>
+          <TextField id="outlined-basic" label="E-mail" variant="outlined" className={styles.textField} size="small"  type="email"
               name="email"
               value={email}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label>
-            Пароль
-            <input
-              type="password"
+            onChange={this.handleChange} />
+          </div>
+          <div  className={styles.margin}>
+          <TextField id="outlined-basic" label="Password" variant="outlined" className={styles.textField} size="small" type="password"
               name="password"
               value={password}
-              onChange={this.handleChange}
-            />
-          </label>
+              onChange={this.handleChange} />
+          </div>
 
-          <button type="submit">Sign in</button>
+
+          
+          <div>
+<Button variant="outlined" color="primary" className={styles.button} type="submit">
+  Sign In
+            </Button>
+            </div>
         </form>
       </div>
     );

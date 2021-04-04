@@ -8,7 +8,7 @@ const Spinner = () => {
     <div className={styles.spinner}>
       <Loader
         type="ThreeDots"
-        color="rgb(49, 105, 138)"
+        color="rgb(120, 9, 148)"
         height={100}
         width={100}
         timeout={3000}

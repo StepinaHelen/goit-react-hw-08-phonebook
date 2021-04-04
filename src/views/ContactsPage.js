@@ -8,6 +8,8 @@ import Filter from '../Components/Filter';
 import { connect } from 'react-redux';
 import contactsOperation from '../redux/Contacts/contacts-operation';
 import Spinner from '../Components/Spinner';
+import styles from './common.module.scss';
+
 
 class ContactsPage extends React.Component {
   componentDidMount() {
@@ -15,7 +17,7 @@ class ContactsPage extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className={styles.contactContainer}>
         <ContactForm />
         <Filter />
         {this.props.isLoading && <Spinner />}

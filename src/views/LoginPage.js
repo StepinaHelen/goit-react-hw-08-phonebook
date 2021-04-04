@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import operation from '../redux/Auth/auth-operation';
+import styles from './common.module.scss';
+import { TextField ,Button } from '@material-ui/core';
 
 class LoginPage extends Component {
   state = {
@@ -26,14 +28,32 @@ class LoginPage extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
-        <h1>Страница логина</h1>
+      <div className={styles.LoginRegistrationPage}>
+        <h2>Please sign in to your account</h2>
 
-        <form
+        <form 
           onSubmit={this.handleSubmit}
-          // autoComplete="off"
         >
-          <label>
+
+          <div className={styles.margin}>
+          <TextField id="outlined-basic" label="E-mail" variant="outlined" className={styles.textField} size="small"  type="email"
+              name="email"
+              value={email}
+              onChange={this.handleChange} />
+          </div>
+          <div  className={styles.margin}>
+          <TextField id="outlined-basic" label="Password" variant="outlined" className={styles.textField} size="small" type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange} />
+            
+          </div>
+          <div>
+<Button variant="outlined" color="primary" className={styles.button} type="submit">
+  Sign In
+            </Button>
+            </div>
+          {/* <label>
             Почта
             <input
               type="email"
@@ -51,9 +71,9 @@ class LoginPage extends Component {
               value={password}
               onChange={this.handleChange}
             />
-          </label>
+          </label> */}
 
-          <button type="submit">Войти</button>
+          {/* <button type="submit">Войти</button> */}
         </form>
       </div>
     );
